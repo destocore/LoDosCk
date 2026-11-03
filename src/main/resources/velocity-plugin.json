@@ -1,0 +1,6 @@
+{
+  "id": "lodosck",
+  "name": "LoDosCk",
+  "version": "${version}",
+  "main": "NetShield.loDosCk.LoDosCk"
+}

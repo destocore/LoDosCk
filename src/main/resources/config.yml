@@ -1,0 +1,52 @@
+# ==============================================================================
+#                                LoDosCk 🛡️
+#             Enterprise-Grade High-Load Network Security Layer
+# ==============================================================================
+
+# Core Module: Packet Filtration & Behavioral Inspection
+KeenEyeAI:
+  # Select the system security level.
+  # Higher values activate low-level kernel abstractions and inspection hooks.
+  #
+  #  0 - OFF        | Subsystem idle. Footprint: 0 KB/session.
+  #  1 - JOIN_ONLY  | Connection phase protection only (Linguistic entropy & limits).
+  #  2 - FULL       | Total mitigation armor. Profile 1 + real-time global chat monitoring.
+  mode: 2
+
+# Linguistic Analysis Thresholds (Active on Level 1 and higher)
+nick-analyzer:
+  max-unstructured-length: 14
+  max-consecutive-consonants: 4
+  max-consecutive-vowels: 4
+
+# Circuit Breaker Subsystem (Active on emergency memory exhaustion)
+memory-guard:
+  critical-ram-percentage: 95
+
+# Inbound Network Subnet Traffic Limits
+IP-guard:
+  # Maximum allowed active sessions concurrently routed from a single IP descriptor.
+  max: 3
+  # Maximum allowed active suspicious signatures concurrently routed from a single IP descriptor.
+  max-suspicious: 1
+
+# Background Deferred IO Subsystem (Database Serialization Pipeline)
+database-saver:
+  flush-interval-seconds: 30
+  batch-size: 50
+
+# ==============================================================================
+#                      Custom Player-Facing Notifications
+# ==============================================================================
+messages:
+  # Текст бана при блокировке IP-адреса в чате или совпадении с базой banlist.txt
+  ban-reason: "§c[LoDosCk] Your IP address has been permanently blacklisted."
+
+  # Сообщение при экстренной очистке RAM (MemoryGuard Circuit Breaker), если сервер перегружен
+  emergency-kick: "&c[LoDosCk] Proxy gateway overloaded. Please re-authenticate in a few moments."
+
+  # Кик из чата за превышение лимитов флуда или попытку пустить спам-дубликаты
+  chat-flood-kick: "§c[LoDosCk] You were kicked for aggressive chat flooding (Limit: 2 repeats per 5 sec)."
+
+  # Легкое тихое предупреждение в личные сообщения при первом повторе текста
+  chat-flood-warn: "§c[LoDosCk] Please refrain from repeating identical messages so frequently."
